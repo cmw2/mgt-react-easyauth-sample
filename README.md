@@ -33,4 +33,27 @@ Note that once you've made this change you need a fresh login session to get the
 
 You can see the related code in UserController.GetAccessToken and in Home.js getAccessToken.
 
+UserController.cs
+
+        [HttpGet("accesstoken")]
+        public IActionResult GetAccessToken()
+        {
+            return Ok(this.Request.Headers["X-MS-TOKEN-AAD-ACCESS-TOKEN"][0]);
+        }
+
+Home.js
+
+        async getAccessToken(scopes) {
+            const response = await fetch('user/accesstoken');    
+            return response.text();
+        }
+
 #6 After we have the token we then need to give it to the MS Graph Toolkit.  I've done this using a [SimpleProvider](https://docs.microsoft.com/en-us/graph/toolkit/providers/custom#simpleprovider).  You can see this code in Home.js hookupMgtProvider.
+
+Home.js
+
+        async hookupMgtProvider() {    
+            let myProvider = new SimpleProvider(this.getAccessToken);
+            Providers.globalProvider = myProvider;
+            myProvider.setState(ProviderState.SignedIn);
+        }
