@@ -29,20 +29,7 @@ namespace ReactAAD.Controllers
             string expires = this.Request.Headers["X-MS-TOKEN-AAD-EXPIRES-ON"];
             string refreshToken = this.Request.Headers["X-MS-TOKEN-AAD-REFRESH-TOKEN"];
 
-            //string userName = "Not logged in";
-            //var currentIdentity = User?.Identity;
-            //if (currentIdentity != null)
-            //{
-            //    userName = $"{currentIdentity.Name} ({currentIdentity.AuthenticationType})";
-            //}
-
             return Ok(new { idToken, accessToken, expires, refreshToken });
-        }
-
-        [HttpGet("headers")]
-        public IActionResult GetHeaders()
-        {
-            return Ok(this.Request.Headers);
         }
 
         [HttpGet("accesstoken")]
