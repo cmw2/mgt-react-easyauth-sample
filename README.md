@@ -57,3 +57,27 @@ Home.js
             Providers.globalProvider = myProvider;
             myProvider.setState(ProviderState.SignedIn);
         }
+
+## Links/Resources
+
+- Retreive tokens from EasyAuth  
+  https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to#retrieve-tokens-in-app-code
+
+- Refresh tokens  
+  https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to#refresh-identity-provider-tokens
+
+- Azure Resource Explorer  
+  https://resources.azure.com/
+
+- Graph Tookit  
+  https://docs.microsoft.com/en-us/graph/toolkit/get-started
+
+- React wrapper for MS Graph Toolkit  
+  https://github.com/nmetulev/mgt-react
+
+- MS Graph Toolkit Custom Provider  
+  https://docs.microsoft.com/en-us/graph/toolkit/providers/custom
+
+- General reference  
+  https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens  
+  https://jwt.ms/
