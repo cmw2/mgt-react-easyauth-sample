@@ -21,8 +21,10 @@ export class Home extends Component {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <h3>People Picker</h3>
-        <div><mgt-people-picker></mgt-people-picker></div>
+        <h3>People Picker - Wrapper</h3>
+        <div><PeoplePicker showMax="4" selection-mode="single" ></PeoplePicker></div>
+        <h3>People Picker - Vanilla</h3>
+        <div><mgt-people-picker showMax="4" selection-mode="single" ></mgt-people-picker></div>
       </div>
     );
   }
