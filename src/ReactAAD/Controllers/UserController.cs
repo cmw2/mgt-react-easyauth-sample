@@ -35,7 +35,14 @@ namespace ReactAAD.Controllers
         [HttpGet("accesstoken")]
         public IActionResult GetAccessToken()
         {
-            return Ok(this.Request.Headers["X-MS-TOKEN-AAD-ACCESS-TOKEN"][0]);
+            if (this.Request.Headers.ContainsKey("X-MS-TOKEN-AAD-ACCESS-TOKEN"))
+            {
+                return Ok(this.Request.Headers["X-MS-TOKEN-AAD-ACCESS-TOKEN"][0]);
+            }
+            else
+            {
+                return Unauthorized();
+            }
         }
     }
 }
